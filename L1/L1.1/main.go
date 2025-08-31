@@ -23,8 +23,8 @@ func (a *Action) Run() {
 
 // Дочерняя структура Action, встраивающая Human (embedding)
 type Action struct {
-    Human      // Встраивание: нет имени поля — это ключ!
-    Energy int // Своё поле: энергия
+    Human      // Встраивание
+    Energy int
 }
 
 func main() {
