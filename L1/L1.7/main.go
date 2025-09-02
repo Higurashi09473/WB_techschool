@@ -11,12 +11,12 @@ func main() {
 	wg := sync.WaitGroup{}
 	for i := 0; i < 100; i++ {
 		wg.Add(1)
-		go func() {
+		go func(i int) {
 			defer wg.Done()
 			mt.Lock()
 			set[i] = fmt.Sprint("data ", i)
 			mt.Unlock()
-		}()
+		}(i)
 	}
 
 	wg.Wait()
